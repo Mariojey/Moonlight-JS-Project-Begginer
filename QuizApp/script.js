@@ -29,6 +29,7 @@ const dText = document.getElementById('dText');
 const submitBtn = document.getElementById('submit');
 
 let currentQuestion = 0;
+let answer = undefined;
 loadQuiz();
 
 function loadQuiz() {
@@ -42,15 +43,28 @@ function loadQuiz() {
     currentQuestion++;
 }
 
+function getSelected() {
+    const answers = document.querySelectorAll('answer');
+
+    answers.forEach(answers => {
+        if (answers.checked) {
+            answer = answers.id;
+        }
+    });
+}
+
 submitBtn.addEventListener("click", () => {
     currentQuestion++;
 
+    /*
     if (currentQuestion < quizData.length) {
         loadQuiz();
     } else {
         alert('You finished this quiz, your award is żeton na kielnie i beton');
-    }
+    } */
+
+    getSelected();
 
 })
 
-//58:07
+//1:05:08
