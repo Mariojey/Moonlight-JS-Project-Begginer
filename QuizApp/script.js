@@ -45,7 +45,7 @@ function loadQuiz() {
 submitBtn.addEventListener("click", () => {
     currentQuestion++;
 
-    if (currentQuestion < currentQuizData.length) {
+    if (currentQuestion < quizData.length) {
         loadQuiz();
     } else {
         alert('You finished this quiz, your award is żeton na kielnie i beton');
